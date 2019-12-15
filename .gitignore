@@ -1,0 +1,6 @@
+apollo-client/dist/*
+apollo-client/node_modules/
+apollo-client/.cache/
+graphql-prisma/node_modules/
+apollo-client/package-lock.json
+.DS_Store
