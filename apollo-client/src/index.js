@@ -90,7 +90,6 @@ const SingleUserPage = () =>{
 	)
 }
 
-
 const useLoadMore = (loading, error, fetchMore, pageInfo) => {
   const [fetchingMore, updateFetchingMore] = useState(false);
   const { hasNextPage, endCursor } = pageInfo;
@@ -132,7 +131,7 @@ const useLoadMore = (loading, error, fetchMore, pageInfo) => {
 
             set(
               fetchMoreResult,
-              "usersConnections.edges",
+              "usersConnection.edges",
               concat(previousEdges, nextEdges)
             );
 						console.log("===");
@@ -161,7 +160,6 @@ const UsersFetchMorePage = () =>{
 	const { loading, error, data, fetchMore } = useQuery(USERS_CONNECTION, {
 		variables: {first: 2}
 	});
-	//console.log(data);
 	const pageInfo = get(data, "usersConnection.pageInfo", {});	
 	const users = get(data, "usersConnection.edges", []);
 
@@ -178,9 +176,9 @@ const UsersFetchMorePage = () =>{
 			<p>Loading...</p>
 		):(
 			<div>
-				{users.map(({node}) => {
+				{users.map(({node}, index) => {
 					return (
-						<p key={node.id}>{node.id}/{node.name}</p>
+						<p key={`${node.id}_${index}`}>{node.id}/{node.name}</p>
 					)
 				})}
 				{pageInfo.hasNextPage && (
@@ -197,8 +195,6 @@ const UsersFetchMorePage = () =>{
 		</div>		
 	)
 }
-
-	
 
 const client = new ApolloBoost({
     uri: 'http://localhost:4000'
