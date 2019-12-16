@@ -33,7 +33,7 @@
 }
 ```
 
-**React**
+**React- graphql**
 
 ```js
 const USERS_CONNECTION = gql`
@@ -58,8 +58,7 @@ const USERS_CONNECTION = gql`
 `
 ```
 
-
-
+**React Component with fetch more button**
 ```js
 const UsersFetchMorePage = () =>{
   const { loading, error, data, fetchMore } = useQuery(USERS_CONNECTION, {
@@ -102,7 +101,7 @@ const UsersFetchMorePage = () =>{
 }
 ```
 
-
+**React - fetchmore function**
 ```js
 const useLoadMore = (loading, error, fetchMore, pageInfo) => {
   const [fetchingMore, updateFetchingMore] = useState(false);
