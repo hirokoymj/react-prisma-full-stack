@@ -1,6 +1,4 @@
-# Redux Form 
-
-### React Hooks with a Function as Child Component vs HOC
+# Redux Form Structure with React Hooks
 
 - UserProfileForm
 
@@ -93,7 +91,7 @@ export const UserProfile = () => {
 ```
 <hr />
 
-### Redux Form (HOC)
+## Redux Form Structure (HOC)
 
 - UserProfileFields
  
