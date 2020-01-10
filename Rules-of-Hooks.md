@@ -18,7 +18,11 @@
 - `useState()`, `useEffect()` - from React 16.8
 - `useQuery()` - from React apollo
 - `useHistory()` - from React Router
+- `useParams()` - from React Router
 
+```js
+let { id } = useParams();
+```
 
 **Example 1**
 
